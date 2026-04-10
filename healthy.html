@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthy</title>
+    <link rel="icon" href="logo.jpg" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" type="image/png">
+    <link rel="stylesheet" href="healthy.css">
+</head>
+<body>
+
+    
+    <div id="cart-fab" onclick="openCart()">
+        🛒
+        <span class="badge" id="cart-badge"></span>
+    </div>
+
+    
+    <div id="toast">✅ <span id="toast-text"></span></div>
+
+    
+    <div id="cart-overlay" onclick="closeCart()"></div>
+
+    
+    <div id="cart-drawer">
+        <div class="cart-header">
+            <h2>🛒 My Cart</h2>
+            <button id="close-cart" onclick="closeCart()">✕</button>
+        </div>
+        <div id="cart-items"></div>
+        <div class="cart-footer" id="cart-footer" style="display:none">
+            <div class="cart-total-row">
+                <span class="cart-total-label">Total</span>
+                <span id="cart-total"></span>
+                
+            </div>
+            <button class="checkout-btn" onclick="confirmOrder()">Confirm Order</button>
+            
+        </div>
+    </div>
+
+    <!-- PAGE CONTENT -->
+    <div class="container">
+        <a href="../homepage/index.html" class="back-link">
+            <img src="favicon_io/favicon.ico" alt="Neriva" class="logo">
+        </a>
+
+        <h1>Breakfast</h1>
+        <div class="breakfast">
+            <div class="meal">
+                <img src="image/brekfast/br1.jpg" alt="br1">
+                <div class="info">
+                    <h2>Avocado Egg Toast Deluxe</h2>
+                    <p>Creamy avocado topped with soft eggs on whole grain toast, rich in healthy fats and protein.</p>
+                    <p>Calories: ~420 kcal</p>
+                    <p>Protein: ~22 g</p>
+                    <p>price: 450DA</p>
+                    <button onclick="addToCart(this, 'Avocado Egg Toast Deluxe', 450)">order now</button>
+                </div>
+            </div>
+            <div class="meal">
+                <img src="image/brekfast/br2.jpg" alt="br2">
+                <div class="info">
+                    <h2>Spinach Cheese Omelette</h2>
+                    <p>Fluffy omelette filled with spinach and cheese, a light and protein-rich start to your day.</p>
+                    <p>Calories: ~300 kcal</p>
+                    <p>Protein: ~20 g</p>
+                    <p>price: 350DA</p>
+                    <button onclick="addToCart(this, 'Spinach Cheese Omelette', 350)">order now</button>
+                </div>
+            </div>
+            <div class="meal">
+                <img src="image/brekfast/br3.jpg" alt="br3">
+                <div class="info">
+                    <h2>Classic Protein Breakfast Plate</h2>
+                    <p>Scrambled eggs with toast and fresh fruits, a balanced breakfast full of vitamins and protein.</p>
+                    <p>Calories: ~400 kcal</p>
+                    <p>Protein: ~24 g</p>
+                    <p>price: 400DA</p>
+                    <button onclick="addToCart(this, 'Classic Protein Breakfast Plate', 400)">order now</button>
+                </div>
+            </div>
+            <div class="meal">
+                <img src="image/brekfast/br4.jpg" alt="br4">
+                <div class="info">
+                    <h2>Peanut Butter Banana Toast</h2>
+                    <p>Whole grain toast with peanut butter, banana, and seeds, perfect for energy and muscle fuel.</p>
+                    <p>Calories: ~450 kcal</p>
+                    <p>Protein: ~20 g</p>
+                    <p>price: 350DA</p>
+                    <button onclick="addToCart(this, 'Peanut Butter Banana Toast', 350)">order now</button>
+                </div>
+            </div>
+            <div class="meal">
+                <img src="image/brekfast/br6.jpg" alt="br6">
+                <div class="info">
+                    <h2>Herb Veggie Omelette</h2>
+                    <p>Light omelette with fresh herbs and vegetables, simple, healthy, and full of flavor.</p>
+                    <p>Calories: ~280 kcal</p>
+                    <p>Protein: ~19 g</p>
+                    <p>price: 350DA</p>
+                    <button onclick="addToCart(this, 'Herb Veggie Omelette', 350)">order now</button>
+                </div>
+            </div>
+            <div class="meal">
+                <img src="image/brekfast/br9.jpg" alt="br9">
+                <div class="info">
+                    <h2>Balanced Avocado Breakfast Plate</h2>
+                    <p>Avocado toast served with scrambled eggs and fresh strawberries, a perfectly balanced meal rich in protein, healthy fats, and vitamins.</p>
+                    <p>Calories: ~430 kcal</p>
+                    <p>Protein: ~23 g</p>
+                    <p>price: 500DA</p>
+                    <button onclick="addToCart(this, 'Balanced Avocado Breakfast Plate', 500)">order now</button>
+                </div>
+            </div>
+            <div class="meal">
+                <img src="image/brekfast/br7.jpg" alt="br7">
+                <div class="info">
+                    <h2>Apple Cinnamon Pancake Plate</h2>
+                    <p>Soft pancakes served with fresh apples and yogurt, a light and naturally sweet breakfast option.</p>
+                    <p>Calories: ~480 kcal</p>
+                    <p>Protein: ~18 g</p>
+                    <p>price: 400DA</p>
+                    <button onclick="addToCart(this, 'Apple Cinnamon Pancake Plate', 400)">order now</button>
+                </div>
+            </div>
+            <div class="meal">
+                <img src="image/brekfast/br8.jpg" alt="br8">
+                <div class="info">
+                    <h2>Fruit Honey Pancakes</h2>
+                    <p>Fluffy pancakes topped with fresh fruits and a touch of honey, perfect for a refreshing energy boost.</p>
+                    <p>Calories: ~500 kcal</p>
+                    <p>Protein: ~16 g</p>
+                    <p>price: 500DA</p>
+                    <button onclick="addToCart(this, 'Fruit Honey Pancakes', 500)">order now</button>
+                </div>
+            </div>
+        </div>
+
+        <h1>Lunch and dinner</h1>
+        <div class="lunch">
+            <div class="meal">
+                <img src="image/lunch/1.jpg" alt="1">
+                <div class="info">
+                    <h2>Grilled Chicken Power Plate</h2>
+                    <p>Juicy grilled chicken served with rice, roasted potatoes, and fresh broccoli, a balanced high-protein meal for energy.</p>
+                    <p>Calories: ~520 kcal</p>
+                    <p>Protein: ~38 g</p>
+                    <p>price: 1200DA</p>
+                    <button onclick="addToCart(this, 'Grilled Chicken Power Plate', 1200)">order now</button>
+                </div>
+            </div>
+            <div class="meal">
+                <img src="image/lunch/2.jpg" alt="2">
+                <div class="info">
+                    <h2>Crispy Chicken Fresh Salad</h2>
+                    <p>Crispy chicken pieces with fresh lettuce and vegetables, offering a mix of crunch and freshness.</p>
+                    <p>Calories: ~450 kcal</p>
+                    <p>Protein: ~28 g</p>
+                    <p>price: 800DA</p>
+                    <button onclick="addToCart(this, 'Crispy Chicken Fresh Salad', 800)">order now</button>
+                </div>
+            </div>
+            <div class="meal">
+                <img src="image/lunch/3.jpg" alt="3">
+                <div class="info">
+                    <h2>Creamy Chicken Pasta Bowl</h2>
+                    <p>Tender chicken with pasta in a light creamy sauce, combined with broccoli for a satisfying balanced meal.</p>
+                    <p>Calories: ~600 kcal</p>
+                    <p>Protein: ~35 g</p>
+                    <p>price: 1000DA</p>
+                    <button onclick="addToCart(this, 'Creamy Chicken Pasta Bowl', 1000)">order now</button>
+                </div>
+            </div>
+            <div class="meal">
+                <img src="image/lunch/4.jpg" alt="4">
+                <div class="info">
+                    <h2>Grilled Chicken & Mash Plate</h2>
+                    <p>Grilled chicken served with smooth mashed potatoes and fresh tomato salad, simple and comforting.</p>
+                    <p>Calories: ~480 kcal</p>
+                    <p>Protein: ~34 g</p>
+                    <p>price: 800DA</p>
+                    <button onclick="addToCart(this, 'Grilled Chicken and Mash Plate', 800)">order now</button>
+                </div>
+            </div>
+            <div class="meal">
+                <img src="image/lunch/5.jpg" alt="5">
+                <div class="info">
+                    <h2>Beef & Avocado Energy Bowl</h2>
+                    <p>Seasoned ground beef with roasted potatoes, avocado, and fresh vegetables, rich in protein and healthy fats.</p>
+                    <p>Calories: ~650 kcal</p>
+                    <p>Protein: ~36 g</p>
+                    <p>price: 1400DA</p>
+                    <button onclick="addToCart(this, 'Beef and Avocado Energy Bowl', 1400)">order now</button>
+                </div>
+            </div>
+            <div class="meal">
+                <img src="image/lunch/6.jpg" alt="6">
+                <div class="info">
+                    <h2>Lemon Herb Salmon Plate</h2>
+                    <p>Grilled salmon with roasted potatoes and broccoli, rich in omega-3 and perfect for a healthy lifestyle.</p>
+                    <p>Calories: ~550 kcal</p>
+                    <p>Protein: ~32 g</p>
+                    <p>price: 1800DA</p>
+                    <button onclick="addToCart(this, 'Lemon Herb Salmon Plate', 1800)">order now</button>
+                </div>
+            </div>
+            <div class="meal">
+                <img src="image/lunch/7.jpg" alt="7">
+                <div class="info">
+                    <h2>Chicken Burrito Bowl</h2>
+                    <p>Grilled chicken with corn, beans, guacamole, and fresh vegetables, a flavorful and nutrient-rich bowl.</p>
+                    <p>Calories: ~580 kcal</p>
+                    <p>Protein: ~37 g</p>
+                    <p>price: 1200DA</p>
+                    <button onclick="addToCart(this, 'Chicken Burrito Bowl', 1200)">order now</button>
+                </div>
+            </div>
+            <div class="meal">
+                <img src="image/lunch/8.jpg" alt="8">
+                <div class="info">
+                    <h2>Creamy Shrimp Rice Plate</h2>
+                    <p>Juicy shrimp in a creamy sauce served with rice, a delicious and protein-rich seafood option.</p>
+                    <p>Calories: ~540 kcal</p>
+                    <p>Protein: ~30 g</p>
+                    <p>price: 2200DA</p>
+                    <button onclick="addToCart(this, 'Creamy Shrimp Rice Plate', 2200)">order now</button>
+                </div>
+            </div>
+        </div>
+
+        <h1>bowls</h1>
+        <div class="bowls">
+            <div class="meal">
+                <img src="image/bowls/b1.jpg" alt="b1">
+                <div class="info">
+                    <h2>Berry Yogurt Power Bowl</h2>
+                    <p>Creamy yogurt topped with fresh berries, banana, and granola, a refreshing and fiber-rich breakfast.</p>
+                    <p>Calories: ~380 kcal</p>
+                    <p>Protein: ~18 g</p>
+                    <p>price: 500DA</p>
+                    <button onclick="addToCart(this, 'Berry Yogurt Power Bowl', 500)">order now</button>
+                </div>
+            </div>
+            <div class="meal">
+                <img src="image/bowls/b2.jpg" alt="b2">
+                <div class="info">
+                    <h2>Chocolate Granola Energy Bowl</h2>
+                    <p>Crunchy chocolate granola with yogurt and fresh berries, a delicious mix of energy and antioxidants.</p>
+                    <p>Calories: ~450 kcal</p>
+                    <p>Protein: ~16 g</p>
+                    <p>price: 500DA</p>
+                    <button onclick="addToCart(this, 'Chocolate Granola Energy Bowl', 500)">order now</button>
+                </div>
+            </div>
+            <div class="meal">
+                <img src="image/bowls/b3.jpg" alt="b3">
+                <div class="info">
+                    <h2>Banana Peanut Protein Bowl</h2>
+                    <p>Banana with peanut butter, chocolate, and berries, a rich and energizing bowl perfect for active days.</p>
+                    <p>Calories: ~520 kcal</p>
+                    <p>Protein: ~20 g</p>
+                    <p>price: 500DA</p>
+                    <button onclick="addToCart(this, 'Banana Peanut Protein Bowl', 500)">order now</button>
+                </div>
+            </div>
+            <div class="meal">
+                <img src="image/bowls/b4.jpg" alt="b4">
+                <div class="info">
+                    <h2>Chia Berry Yogurt Cup</h2>
+                    <p>Chia pudding layered with creamy yogurt and berry sauce, rich in fiber and omega-3.</p>
+                    <p>Calories: ~320 kcal</p>
+                    <p>Protein: ~15 g</p>
+                    <p>price: 300DA</p>
+                    <button onclick="addToCart(this, 'Chia Berry Yogurt Cup', 300)">order now</button>
+                </div>
+            </div>
+            <div class="meal">
+                <img src="image/bowls/b5.jpg" alt="b5">
+                <div class="info">
+                    <h2>Berry Granola Parfait</h2>
+                    <p>Layers of yogurt, crunchy granola, and fresh berries, a light and satisfying treat.</p>
+                    <p>Calories: ~400 kcal</p>
+                    <p>Protein: ~17 g</p>
+                    <p>price: 300DA</p>
+                    <button onclick="addToCart(this, 'Berry Granola Parfait', 300)">order now</button>
+                </div>
+            </div>
+            <div class="meal">
+                <img src="image/bowls/b6.jpg" alt="b6">
+                <div class="info">
+                    <h2>Classic Chia Protein Jar</h2>
+                    <p>Simple chia pudding topped with banana and berries, a clean and protein-rich snack.</p>
+                    <p>Calories: ~300 kcal</p>
+                    <p>Protein: ~14 g</p>
+                    <p>price: 300DA</p>
+                    <button onclick="addToCart(this, 'Classic Chia Protein Jar', 300)">order now</button>
+                </div>
+            </div>
+        </div>
+
+        <h1>snacks</h1>
+        <div class="snacks">
+            <div class="meal">
+                <img src="image/snacks/s1.jpg" alt="s1">
+                <div class="info">
+                    <h2>Peanut Butter Energy Bites</h2>
+                    <p>No-bake energy bites made with oats, peanut butter, and dark chocolate, perfect for a quick protein boost.</p>
+                    <p>Calories: ~90 kcal (per serving= 1 bite)</p>
+                    <p>Protein: ~4 g</p>
+                    <p>price: 250DA (5 bites)</p>
+                    <button onclick="addToCart(this, 'Peanut Butter Energy Bites', 250)">order now</button>
+                </div>
+            </div>
+            <div class="meal">
+                <img src="image/snacks/s2.jpg" alt="s2">
+                <div class="info">
+                    <h2>Blueberry Protein Cake</h2>
+                    <p>Soft blueberry cake made with wholesome ingredients, a sweet treat rich in antioxidants.</p>
+                    <p>Calories: ~80 kcal (per slice)</p>
+                    <p>Protein: ~6 g</p>
+                    <p>price: 100DA (per slice)</p>
+                    <button onclick="addToCart(this, 'Blueberry Protein Cake', 100)">order now</button>
+                </div>
+            </div>
+            <div class="meal">
+                <img src="image/snacks/s3.jpg" alt="s3">
+                <div class="info">
+                    <h2>Nut & Seed Energy Cookies</h2>
+                    <p>Crunchy cookies packed with nuts, seeds, and oats, a natural energy snack.</p>
+                    <p>Calories: ~80 kcal (per serving= 1 bite)</p>
+                    <p>Protein: ~5 g</p>
+                    <p>price: 300DA (4bites)</p>
+                    <button onclick="addToCart(this, 'Nut and Seed Energy Cookies', 300)">order now</button>
+                </div>
+            </div>
+            <div class="meal">
+                <img src="image/snacks/s4.jpg" alt="s4">
+                <div class="info">
+                    <h2>Mixed Nut Granola Bars</h2>
+                    <p>Homemade granola bars with nuts, oats, and honey, ideal for on-the-go energy.</p>
+                    <p>Calories: ~100 kcal (per serving= 1 bite)</p>
+                    <p>Protein: ~8 g</p>
+                    <p>price: 200DA (2bites)</p>
+                    <button onclick="addToCart(this, 'Mixed Nut Granola Bars', 200)">order now</button>
+                </div>
+            </div>
+            <div class="meal">
+                <img src="image/snacks/s5.jpg" alt="s5">
+                <div class="info">
+                    <h2>Banana Chocolate Protein Bread</h2>
+                    <p>Moist banana bread with dark chocolate chips, a naturally sweet and protein-rich treat.</p>
+                    <p>Calories: ~70 kcal (per slice)</p>
+                    <p>Protein: ~5 g</p>
+                    <p>price: 100DA (per slice)</p>
+                    <button onclick="addToCart(this, 'Banana Chocolate Protein Bread', 100)">order now</button>
+                </div>
+            </div>
+            <div class="meal">
+                <img src="image/snacks/s6.jpg" alt="s6">
+                <div class="info">
+                    <h2>Oatmeal Banana Muffins</h2>
+                    <p>Soft oatmeal muffins made with banana and whole grains, perfect for a healthy snack.</p>
+                    <p>Calories: ~95 kcal (per serving= 1 bite)</p>
+                    <p>Protein: ~6 g</p>
+                    <p>price: 100DA (per slice)</p>
+                    <button onclick="addToCart(this, 'Oatmeal Banana Muffins', 100)">order now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="cart.js"></script>
+</body>
+</html>

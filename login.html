@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Zain:ital,wght@0,200;0,300;0,400;0,700;0,800;0,900;1,300;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="signup.css">
+    <link rel="stylesheet" href="login.css">
+    <title>Login  | Neriva</title>
+    <link rel=" icon" href="logo.jpg" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" type="image/png">
+</head>
+<body>
+   <div class="signup-container fade-in">
+        <a href="../homepage/index.html" class="back-link">
+            <img src="favicon_io/favicon.ico" alt="Neriva" class="logo">
+        </a>
+
+        <h1><span class="title-gold">Login</span></h1> 
+        <p class="subtitle">Enter your credentials to access your account</p>
+
+        <form id="loginForm">
+            <div class="input-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="example@email.com" required>
+                <span class="error-message" id="emailError">Please enter a valid email.</span>
+            </div>
+            
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                <span class="error-message" id="passwordError">Incorrect password.</span>
+            </div>
+            
+            <button type="submit" class="btn">Login</button>
+        </form>
+
+        <div class="footer">
+            Don't have an account? <a href="../Signup/signup.html">Sign up</a>
+        </div>
+    </div>
+
+    <div class="popup" id="successPopup">
+        <div class="popup-content scale-in">
+            <div class="popup-icon success">✓</div>
+            <h2>Welcome Back!</h2>
+            <p>Login successful. Redirecting you to your dashboard...</p>
+            <button class="popup-btn" onclick="closePopup()">Continue</button>
+        </div>
+    </div>
+
+    <div class="popup" id="errorPopup">
+        <div class="popup-content scale-in">
+            <div class="popup-icon error">✕</div>
+            <h2>Login Failed</h2>
+            <p id="errorMessage">Invalid email or password. Please try again.</p>
+            <button class="popup-btn" onclick="closeErrorPopup()">Try Again</button>
+        </div>
+    </div>
+
+    <script src="login.js"></script>
+</body>
+</html>

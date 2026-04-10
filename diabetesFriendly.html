@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes-Friendly</title>
+    <link rel="icon" href="logo.jpg" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" type="image/png">
+    <link rel="stylesheet" href="diabetesFriendly.css">
+</head>
+<body>
+
+    <div id="cart-fab" onclick="openCart()">
+        🛒
+        <span class="badge" id="cart-badge"></span>
+    </div>
+
+    
+    <div id="toast">✅ <span id="toast-text"></span></div>
+
+    
+    <div id="cart-overlay" onclick="closeCart()"></div>
+
+    
+    <div id="cart-drawer">
+        <div class="cart-header">
+            <h2>🛒 My Cart</h2>
+            <button id="close-cart" onclick="closeCart()">✕</button>
+        </div>
+        <div id="cart-items"></div>
+        <div class="cart-footer" id="cart-footer" style="display:none">
+            <div class="cart-total-row">
+                <span class="cart-total-label">Total</span>
+                <span id="cart-total"></span>
+            </div>
+           <button class="checkout-btn" onclick="confirmOrder()">Confirm Order</button>
+        </div>
+    </div>
+
+    
+    <div class="container">
+        <a href="../homepage/index.html" class="back-link">
+            <img src="favicon_io/favicon.ico" alt="Neriva" class="logo">
+        </a>
+
+        <h1>Breakfast</h1>
+        <div class="breakfast">
+            <div class="meal">
+                <img src="img/breakfast/br1.jpg" alt="br1">
+                <div class="info">
+                    <h2>Banana Peanut Butter Toast with Eggs</h2>
+                    <p>Whole grain toast with banana and peanut butter served with scrambled eggs for a balanced meal.</p>
+                    <p>Calories: ~350 kcal</p>
+                    <p>Protein: ~18 g</p>
+                    <p>price: 400DA</p>
+                    <button onclick="addToCart(this, 'Banana Peanut Butter Toast with Eggs', 400)">order now</button>
+                </div>
+            </div>
+            <div class="meal">
+                <img src="img/breakfast/br2.jpg" alt="br2">
+                <div class="info">
+                    <h2>Omelette with Fresh Vegetables</h2>
+                    <p>Light omelette served with cucumber, tomatoes, and a side of fresh fruits for a complete plate.</p>
+                    <p>Calories: ~280 kcal</p>
+                    <p>Protein: ~20 g</p>
+                    <p>price: 300DA</p>
+                    <button onclick="addToCart(this, 'Omelette with Fresh Vegetables', 300)">order now</button>
+                </div>
+            </div>
+            <div class="meal">
+                <img src="img/breakfast/br3.jpg" alt="br3">
+                <div class="info">
+                    <h2>Yogurt Bowl with Fruits and Nuts</h2>
+                    <p>Creamy yogurt topped with kiwi, apple slices, chia seeds, and almonds for a fiber-rich breakfast.</p>
+                    <p>Calories: ~300 kcal</p>
+                    <p>Protein: ~12 g</p>
+                    <p>price: 500DA</p>
+                    <button onclick="addToCart(this, 'Yogurt Bowl with Fruits and Nuts', 400)">order now</button>
+                </div>
+            </div>
+            <div class="meal">
+                <img src="img/breakfast/br4.jpg" alt="br4">
+                <div class="info">
+                    <h2>Yogurt with Berries and Granola</h2>
+                    <p>Smooth yogurt with fresh berries, seeds, and a small portion of granola for added crunch.</p>
+                    <p>Calories: ~320 kcal</p>
+                    <p>Protein: ~14 g</p>
+                    <p>price: 600DA</p>
+                    <button onclick="addToCart(this, 'Yogurt with Berries and Granola', 500)">order now</button>
+                </div>
+            </div>
+            <div class="meal">
+                <img src="img/breakfast/br5.jpg" alt="br5">
+                <div class="info">
+                    <h2>Chia Pudding with Banana</h2>
+                    <p>Chia pudding soaked in milk and topped with banana slices and nuts for a nutritious start.</p>
+                    <p>Calories: ~280 kcal</p>
+                    <p>Protein: ~10 g</p>
+                    <p>price: 200DA</p>
+                    <button onclick="addToCart(this, 'Chia Pudding with Banana', 200)">order now</button>
+                </div>
+            </div>
+            <div class="meal">
+                <img src="img/breakfast/br6.jpg" alt="br6">
+                <div class="info">
+                    <h2>Chia Pudding with Berries</h2>
+                    <p>Creamy chia pudding topped with blueberries and strawberries for a light and refreshing breakfast.</p>
+                    <p>Calories: ~260 kcal</p>
+                    <p>Protein: ~9 g</p>
+                    <p>price: 200DA</p>
+                    <button onclick="addToCart(this, 'Chia Pudding with Berries', 200)">order now</button>
+                </div>
+            </div>
+        </div>
+
+        <h1>lunch and dinner</h1>
+        <div class="lunch">
+            <div class="meal">
+                <img src="img/lunch and dinner/l1.jpg" alt="l1">
+                <div class="info">
+                    <h2>Grilled Beef with Roasted Potatoes</h2>
+                    <p>Juicy grilled beef with roasted potatoes and herbs, offering balanced protein and controlled carbs.</p>
+                    <p>Calories: ~420 kcal</p>
+                    <p>Protein: ~28 g</p>
+                    <p>price: 1200DA</p>
+                    <button onclick="addToCart(this, 'Grilled Beef with Roasted Potatoes', 1200)">order now</button>
+                </div>
+            </div>
+            <div class="meal">
+                <img src="img/lunch and dinner/l2.jpg" alt="l2">
+                <div class="info">
+                    <h2>Lentil Salad with Feta</h2>
+                    <p>Fresh lentils with tomatoes, herbs, and feta cheese, rich in fiber and plant protein.</p>
+                    <p>Calories: ~350 kcal</p>
+                    <p>Protein: ~18 g</p>
+                    <p>price: 600DA</p>
+                    <button onclick="addToCart(this, 'Lentil Salad with Feta', 600)">order now</button>
+                </div>
+            </div>
+            <div class="meal">
+                <img src="img/lunch and dinner/l3.jpg" alt="l3">
+                <div class="info">
+                    <h2>Creamy Chicken with Mushrooms</h2>
+                    <p>Grilled chicken with light mushroom sauce, served with vegetables for a low-carb balance.</p>
+                    <p>Calories: ~400 kcal</p>
+                    <p>Protein: ~32 g</p>
+                    <p>price: 1000DA</p>
+                    <button onclick="addToCart(this, 'Creamy Chicken with Mushrooms', 1000)">order now</button>
+                </div>
+            </div>
+            <div class="meal">
+                <img src="img/lunch and dinner/l4.jpg" alt="l4">
+                <div class="info">
+                    <h2>Salmon Rice Bowl</h2>
+                    <p>Grilled salmon with rice, avocado, and fresh vegetables for a nutritious balanced bowl.</p>
+                    <p>Calories: ~450 kcal</p>
+                    <p>Protein: ~30 g</p>
+                    <p>price: 1500DA</p>
+                    <button onclick="addToCart(this, 'Salmon Rice Bowl', 1200)">order now</button>
+                </div>
+            </div>
+            <div class="meal">
+                <img src="img/lunch and dinner/l5.jpg" alt="l5">
+                <div class="info">
+                    <h2>Chicken Broccoli Bowl</h2>
+                    <p>Lean chicken with steamed broccoli and a small portion of rice, perfect for low glycemic intake.</p>
+                    <p>Calories: ~380 kcal</p>
+                    <p>Protein: ~35 g</p>
+                    <p>price: 1100DA</p>
+                    <button onclick="addToCart(this, 'Chicken Broccoli Bowl', 1000)">order now</button>
+                </div>
+            </div>
+            <div class="meal">
+                <img src="img/lunch and dinner/l6.jpg" alt="l6">
+                <div class="info">
+                    <h2>Chicken Vegetable Soup</h2>
+                    <p>Warm chicken soup with vegetables in a light broth, ideal for a simple healthy meal.</p>
+                    <p>Calories: ~250 kcal</p>
+                    <p>Protein: ~20 g</p>
+                    <p>price: 600DA</p>
+                    <button onclick="addToCart(this, 'Chicken Vegetable Soup', 600)">order now</button>
+                </div>
+            </div>
+        </div>
+
+        <h1>desserts</h1>
+        <div class="desserts">
+            <div class="meal">
+                <img src="img/dessert/d1.jpg" alt="d1">
+                <div class="info">
+                    <h2>Yogurt Bowl with Mixed Fruits</h2>
+                    <p>Creamy yogurt topped with grapes, banana, berries, and mango for a colorful nutrient-rich bowl.</p>
+                    <p>Calories: ~300 kcal</p>
+                    <p>Protein: ~12 g</p>
+                    <p>price: 600DA</p>
+                    <button onclick="addToCart(this, 'Yogurt Bowl with Mixed Fruits', 500)">order now</button>
+                </div>
+            </div>
+            <div class="meal">
+                <img src="img/dessert/d2.jpg" alt="d2">
+                <div class="info">
+                    <h2>Yogurt with Granola and Fruits</h2>
+                    <p>Smooth yogurt with strawberries, banana, apple, and a small portion of granola for added texture.</p>
+                    <p>Calories: ~320 kcal</p>
+                    <p>Protein: ~13 g</p>
+                    <p>price: 500DA</p>
+                    <button onclick="addToCart(this, 'Yogurt with Granola and Fruits', 400)">order now</button>
+                </div>
+            </div>
+            <div class="meal">
+                <img src="img/dessert/d3.jpg" alt="d3">
+                <div class="info">
+                    <h2>Fresh Fruit Salad Bowl</h2>
+                    <p>A mix of fresh fruits like banana, kiwi, pineapple, and strawberries for a refreshing breakfast.</p>
+                    <p>Calories: ~250 kcal</p>
+                    <p>Protein: ~4 g</p>
+                    <p>price: 700DA</p>
+                    <button onclick="addToCart(this, 'Fresh Fruit Salad Bowl', 500)">order now</button>
+                </div>
+            </div>
+            <div class="meal">
+                <img src="img/dessert/d4.jpg" alt="d4">
+                <div class="info">
+                    <h2>Banana, Berries, and Nuts Plate</h2>
+                    <p>Fresh banana with strawberries, raspberries, and walnuts providing fiber and healthy fats.</p>
+                    <p>Calories: ~280 kcal</p>
+                    <p>Protein: ~6 g</p>
+                    <p>price: 400DA</p>
+                    <button onclick="addToCart(this, 'Banana Berries and Nuts Plate', 400)">order now</button>
+                </div>
+            </div>
+            <div class="meal">
+                <img src="img/dessert/d5.jpg" alt="d5">
+                <div class="info">
+                    <h2>Yogurt with Frozen Berries and Nuts</h2>
+                    <p>Creamy yogurt topped with frozen berries, almonds, and seeds for a rich antioxidant meal.</p>
+                    <p>Calories: ~290 kcal</p>
+                    <p>Protein: ~11 g</p>
+                    <p>price: 400DA</p>
+                    <button onclick="addToCart(this, 'Yogurt with Frozen Berries and Nuts', 400)">order now</button>
+                </div>
+            </div>
+            <div class="meal">
+                <img src="img/dessert/d6.jpg" alt="d6">
+                <div class="info">
+                    <h2>Fruit and Nuts Snack Bowl</h2>
+                    <p>Apple slices with banana, peanuts, and raspberries for a simple balanced combination.</p>
+                    <p>Calories: ~260 kcal</p>
+                    <p>Protein: ~7 g</p>
+                    <p>price: 400DA</p>
+                    <button onclick="addToCart(this, 'Fruit and Nuts Snack Bowl', 400)">order now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="cart.js"></script>
+</body>
+</html>

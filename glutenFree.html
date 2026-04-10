@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gluten-Free</title>
+    <link rel="stylesheet" href="glutenFree.css">
+    <link rel="icon" href="logo.jpg" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" type="image/png">
+</head>
+<body>
+
+    
+    <div id="cart-fab" onclick="openCart()">
+        🛒
+        <span class="badge" id="cart-badge"></span>
+    </div>
+
+    <div id="toast">✅ <span id="toast-text"></span></div>
+
+    
+    <div id="cart-overlay" onclick="closeCart()"></div>
+
+    
+    <div id="cart-drawer">
+        <div class="cart-header">
+            <h2>🛒 My cart</h2>
+            <button id="close-cart" onclick="closeCart()">✕</button>
+        </div>
+        <div id="cart-items"></div>
+        <div class="cart-footer" id="cart-footer" style="display:none">
+            <div class="cart-total-row">
+                <span class="cart-total-label">Total</span>
+                <span id="cart-total"></span>
+            </div>
+            <button class="checkout-btn" onclick="confirmOrder()">Confirm Order</button>
+            
+        </div>
+    </div>
+
+    
+    <div class="container">
+        <a href="../homepage/index.html" class="back-link">
+            <img src="favicon.ico" alt="Neriva" class="logo">
+        </a>
+
+        <h1>Breakfast</h1>
+        <div class="breakfast">
+            <div class="meal">
+                <img src="imag/breakfast/br1.jpg" alt="br1">
+                <div class="info">
+                    <h2>Scrambled Eggs with Avocado</h2>
+                    <p>Fluffy scrambled eggs with creamy avocado. Served with fresh tomato slices.</p>
+                    <p>Calories: ~350 kcal</p>
+                    <p>Protein: ~18 g</p>
+                    <p>Gluten-Free ✅</p>
+                    <p>price: 400DA</p>
+                    <button onclick="addToCart(this, 'Scrambled Eggs with Avocado', 400)">order now</button>
+                </div>
+            </div>
+            <div class="meal">
+                <img src="imag/breakfast/br2.jpg" alt="br2">
+                <div class="info">
+                    <h2>Omelette with Fresh Salad</h2>
+                    <p>Light golden omelette, soft and satisfying. Paired with a fresh cucumber and tomato salad.</p>
+                    <p>Calories: ~300 kcal</p>
+                    <p>Protein: ~16 g</p>
+                    <p>Gluten-Free ✅</p>
+                    <p>price: 250DA</p>
+                    <button onclick="addToCart(this, 'Omelette with Fresh Salad', 250)">order now</button>
+                </div>
+            </div>
+            <div class="meal">
+                <img src="imag/breakfast/br3.jpg" alt="br3">
+                <div class="info">
+                    <h2>Avocado Toast with Eggs</h2>
+                    <p>Crispy gluten-free toast topped with avocado. Finished with perfectly fried eggs and spices.</p>
+                    <p>Calories: ~450 kcal</p>
+                    <p>Protein: ~20 g</p>
+                    <p>Gluten-Free ✅</p>
+                    <p>price: 600DA</p>
+                    <button onclick="addToCart(this, 'Avocado Toast with Eggs', 400)">order now</button>
+                </div>
+            </div>
+            <div class="meal">
+                <img src="imag/breakfast/br4.jpg" alt="br4">
+                <div class="info">
+                    <h2>Mini Pancakes & Blueberries</h2>
+                    <p>Soft gluten-free mini pancakes with yogurt. Served with fresh blueberries for a light sweetness.</p>
+                    <p>Calories: ~400 kcal</p>
+                    <p>Protein: ~14 g</p>
+                    <p>Gluten-Free ✅</p>
+                    <p>price: 500DA</p>
+                    <button onclick="addToCart(this, 'Mini Pancakes and Blueberries', 500)">order now</button>
+                </div>
+            </div>
+            <div class="meal">
+                <img src="imag/breakfast/br5.jpg" alt="br5">
+                <div class="info">
+                    <h2>Pancakes with Fruits</h2>
+                    <p>Golden gluten-free pancakes with fresh fruits. Topped with strawberries, blueberries, and almonds.</p>
+                    <p>Calories: ~420 kcal</p>
+                    <p>Protein: ~15 g</p>
+                    <p>Gluten-Free ✅</p>
+                    <p>price: 500DA</p>
+                    <button onclick="addToCart(this, 'Pancakes with Fruits', 500)">order now</button>
+                </div>
+            </div>
+            <div class="meal">
+                <img src="imag/breakfast/br6.jpg" alt="br6">
+                <div class="info">
+                    <h2>Banana Cottage Toast</h2>
+                    <p>Gluten-free toast with creamy cottage cheese. Topped with banana, seeds, and a honey drizzle.</p>
+                    <p>Calories: ~380 kcal</p>
+                    <p>Protein: ~17 g</p>
+                    <p>Gluten-Free ✅</p>
+                    <p>price: 250DA</p>
+                    <button onclick="addToCart(this, 'Banana Cottage Toast', 250)">order now</button>
+                </div>
+            </div>
+        </div>
+
+        <h1>lunch and dinner</h1>
+        <div class="lunch">
+            <div class="meal">
+                <img src="imag/lunch & dinner/l1.jpg" alt="l1">
+                <div class="info">
+                    <h2>Creamy Vegetable Soup</h2>
+                    <p>Warm, smooth vegetable soup with a creamy texture. Served with toasted gluten-free bread.</p>
+                    <p>Calories: ~280 kcal</p>
+                    <p>Protein: ~8g</p>
+                    <p>Gluten-Free ✅</p>
+                    <p>price: 500DA</p>
+                    <button onclick="addToCart(this, 'Creamy Vegetable Soup', 500)">order now</button>
+                </div>
+            </div>
+            <div class="meal">
+                <img src="imag/lunch & dinner/l2.jpg" alt="l2">
+                <div class="info">
+                    <h2>Grilled Chicken Bowl</h2>
+                    <p>Juicy grilled chicken with roasted sweet potatoes. Served with fresh salad and creamy avocado.</p>
+                    <p>Calories: ~520 kcal</p>
+                    <p>Protein: ~35g</p>
+                    <p>Gluten-Free ✅</p>
+                    <p>price: 1000DA</p>
+                    <button onclick="addToCart(this, 'Grilled Chicken Bowl', 1000)">order now</button>
+                </div>
+            </div>
+            <div class="meal">
+                <img src="imag/lunch & dinner/l3.jpg" alt="l3">
+                <div class="info">
+                    <h2>Chicken Patties with Cucumber</h2>
+                    <p>Golden chicken patties, crispy outside and tender inside. Paired with fresh cucumber salad and yogurt sauce.</p>
+                    <p>Calories: ~450 kcal</p>
+                    <p>Protein: ~30g</p>
+                    <p>Gluten-Free ✅</p>
+                    <p>price: 800DA</p>
+                    <button onclick="addToCart(this, 'Chicken Patties with Cucumber', 800)">order now</button>
+                </div>
+            </div>
+            <div class="meal">
+                <img src="imag/lunch & dinner/l4.jpg" alt="l4">
+                <div class="info">
+                    <h2>Salmon Protein Salad</h2>
+                    <p>Grilled salmon with avocado and boiled eggs. Served on a fresh salad with olives and cucumber.</p>
+                    <p>Calories: ~550 kcal</p>
+                    <p>Protein: ~40g</p>
+                    <p>Gluten-Free ✅</p>
+                    <p>price: 1200DA</p>
+                    <button onclick="addToCart(this, 'Salmon Protein Salad', 1200)">order now</button>
+                </div>
+            </div>
+            <div class="meal">
+                <img src="imag/lunch & dinner/l5.jpg" alt="l5">
+                <div class="info">
+                    <h2>Mediterranean Plate</h2>
+                    <p>Grilled cheese, eggs, and fresh vegetables. A colorful, balanced gluten-free plate full of flavor.</p>
+                    <p>Calories: ~480 kcal</p>
+                    <p>Protein: ~25g</p>
+                    <p>Gluten-Free ✅</p>
+                    <p>price: 700DA</p>
+                    <button onclick="addToCart(this, 'Mediterranean Plate', 700)">order now</button>
+                </div>
+            </div>
+            <div class="meal">
+                <img src="imag/lunch & dinner/l6.jpg" alt="l6">
+                <div class="info">
+                    <h2>Quinoa Chickpea Salad</h2>
+                    <p>Protein-rich quinoa with chickpeas and fresh veggies. Light, refreshing, and perfect for a healthy meal.</p>
+                    <p>Calories: ~420 kcal</p>
+                    <p>Protein: ~18g</p>
+                    <p>Gluten-Free ✅</p>
+                    <p>price: 800DA</p>
+                    <button onclick="addToCart(this, 'Quinoa Chickpea Salad', 800)">order now</button>
+                </div>
+            </div>
+        </div>
+
+        <h1>snacks and desserts</h1>
+        <div class="snacks">
+            <div class="meal">
+                <img src="imag/desserts & snaks/d1.jpg" alt="d1">
+                <div class="info">
+                    <h2>Walnut Cake</h2>
+                    <p>Soft, moist cake made with crushed walnuts. Lightly sweet, rich in flavor, and satisfying.</p>
+                    <p>Calories: ~100 kcal (per slice)</p>
+                    <p>Protein: ~8g</p>
+                    <p>Gluten-Free ✅</p>
+                    <p>price: 300DA</p>
+                    <button onclick="addToCart(this, 'Walnut Cake', 300)">order now</button>
+                </div>
+            </div>
+            <div class="meal">
+                <img src="imag/desserts & snaks/d2.jpg" alt="d2">
+                <div class="info">
+                    <h2>Mango Yogurt Bowl</h2>
+                    <p>Creamy yogurt with fresh mango chunks. Topped with crunchy gluten-free granola.</p>
+                    <p>Calories: ~280 kcal</p>
+                    <p>Protein: ~12g</p>
+                    <p>Gluten-Free ✅</p>
+                    <p>price: 600DA</p>
+                    <button onclick="addToCart(this, 'Mango Yogurt Bowl', 600)">order now</button>
+                </div>
+            </div>
+            <div class="meal">
+                <img src="imag/desserts & snaks/d3.jpg" alt="d3">
+                <div class="info">
+                    <h2>Yogurt Granola Bowl</h2>
+                    <p>Smooth yogurt with crunchy granola and fruits. Served with banana, strawberries, and blueberries.</p>
+                    <p>Calories: ~350 kcal</p>
+                    <p>Protein: ~14g</p>
+                    <p>Gluten-Free ✅</p>
+                    <p>price: 500DA</p>
+                    <button onclick="addToCart(this, 'Yogurt Granola Bowl', 500)">order now</button>
+                </div>
+            </div>
+            <div class="meal">
+                <img src="imag/desserts & snaks/d4.jpg" alt="d4">
+                <div class="info">
+                    <h2>Banana Berry Plate</h2>
+                    <p>Fresh banana slices with yogurt and mixed berries. Topped with granola for extra crunch.</p>
+                    <p>Calories: ~300 kcal</p>
+                    <p>Protein: ~10g</p>
+                    <p>Gluten-Free ✅</p>
+                    <p>price: 400DA</p>
+                    <button onclick="addToCart(this, 'Banana Berry Plate', 400)">order now</button>
+                </div>
+            </div>
+            <div class="meal">
+                <img src="imag/desserts & snaks/d5.jpg" alt="d5">
+                <div class="info">
+                    <h2>Fresh Fruit Plate</h2>
+                    <p>A colorful mix of seasonal fresh fruits. Light, refreshing, and naturally sweet.</p>
+                    <p>Calories: ~250 kcal</p>
+                    <p>Protein: ~5g</p>
+                    <p>Gluten-Free ✅</p>
+                    <p>price: 1000DA</p>
+                    <button onclick="addToCart(this, 'Fresh Fruit Plate', 500)">order now</button>
+                </div>
+            </div>
+            <div class="meal">
+                <img src="imag/desserts & snaks/d6.jpg" alt="d6">
+                <div class="info">
+                    <h2>Energy Bars</h2>
+                    <p>Homemade bars with nuts, seeds, and dried fruits. Perfect healthy snack for energy on the go.</p>
+                    <p>Calories: ~110 kcal (per serving =1bite)</p>
+                    <p>Protein: ~6g</p>
+                    <p>Gluten-Free ✅</p>
+                    <p>price: 300DA (2bites)</p>
+                    <button onclick="addToCart(this, 'Energy Bars', 150)">order now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="cart.js"></script>
+</body>
+</html>
